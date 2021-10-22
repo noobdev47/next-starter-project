@@ -1,7 +1,8 @@
-import React from 'react'
+import { connect } from 'react-redux'
 import { useRouter } from 'next/router'
+import { BsFillSunFill } from "react-icons/bs"
 
-const Navbar = () => {
+const Navbar = ({ mode }) => {
   const router = useRouter()
 
   return (
@@ -12,6 +13,9 @@ const Navbar = () => {
             ? <h2 className="font-sans text-xl text-gray-800">Landing Page</h2>
             : <h2 className="font-sans text-xl">I'm In LMAO</h2>
           }
+        </div>
+        <div className="flex-initial px-1">
+          <BsFillSunFill className="text-yellow-400" />
         </div>
         <div className="flex-initial px-1">
           {router.route === "/"
@@ -30,4 +34,10 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+const mapStateToProps = state => {
+  return {
+    mode: state.modeReducer.mode
+  }
+}
+
+export default connect(mapStateToProps, null)(Navbar)

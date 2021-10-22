@@ -1,4 +1,5 @@
 import '../styles/globals.scss'
+import { wrapper } from '../redux'
 
 const MyApp = ({
   Component,
@@ -6,7 +7,9 @@ const MyApp = ({
 }) => {
   const getLayout = Component.getLayout || ((page) => page)
 
-  return getLayout(<Component {...pageProps} />)
+  return getLayout(
+      <Component {...pageProps} />
+  )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
