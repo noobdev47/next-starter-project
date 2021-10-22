@@ -18,7 +18,6 @@ const LandingPage = () => {
         <title>Landing Page</title>
       </Head>
       <div>
-        <p>Landing Page</p>
         <Link href='/auth/login'>
           Go to Login
         </Link>
