@@ -2,14 +2,14 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layouts/noAuth'
 
 const Login = () => {
   return (
-    <Layout>
-    <Head>
-      <title>Login Page</title>
-    </Head>
+    <>
+      <Head>
+        <title>Login Page</title>
+      </Head>
       <h5>Login Page</h5>
       <Link href='/' >
         Back to Home
@@ -20,7 +20,7 @@ const Login = () => {
         height={144}
         alt="Image Lmao"
       />
-    </Layout>
+    </>
   )
 }
 
