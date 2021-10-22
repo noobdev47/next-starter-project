@@ -25,7 +25,10 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.7",
     "eslint": "8.0.1",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17"
   }
 }

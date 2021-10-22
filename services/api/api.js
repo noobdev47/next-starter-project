@@ -7,7 +7,7 @@ const API = axios.create({
   }
 })
 
-API.interceptors.response(
+API.interceptors.response.use(
   res => { return res },
   err => {
     if(err.status !== 401) throw err
