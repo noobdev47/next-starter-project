@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import Layout from '../components/layout'
-import UserService from './api/user.api'
+import UserService from '../services/api/user.api'
 
 const LandingPage = () => {
 
