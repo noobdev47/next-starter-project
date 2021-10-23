@@ -1,4 +1,4 @@
-import API from "./API"
+// import API from "./API"
 import axios from "axios"
 
 export default function getUserData() {
