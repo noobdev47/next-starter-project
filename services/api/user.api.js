@@ -5,8 +5,8 @@ const UserService = {
   getUsers: async () => {
     return await axios.get('https://jsonplaceholder.typicode.com/users')
   },
-  getUser: (id) => {
-    return axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
+  getUser: async(id) => {
+    return await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
   }
 }
 
