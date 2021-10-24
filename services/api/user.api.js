@@ -1,21 +1,13 @@
 import API from "./API"
 import axios from "axios"
 
-export default function getUserData() {
-  axios.post(`https://app.fakejson.com/q`, {
-    token: process.env.FAKE_JSON_TOKEN,
-    data: {
-      id: 'personNickname',
-      name: "nameFirst",
-      email: "internetEmail",
-      phone: "phoneHome",
-      _repeat: 10
-    }
-  })
-    .then(res => {
-      console.log(res)
-    })
-    .catch(err => {
-      throw err
-    })
+const UserService = {
+  getUsers: async () => {
+    return await axios.get('https://jsonplaceholder.typicode.com/users')
+  },
+  getUser: (id) => {
+    return axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
+  }
 }
+
+export default UserService

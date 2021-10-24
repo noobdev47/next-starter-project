@@ -8,10 +8,6 @@ import Vertical from '../components/layouts/vertical'
 
 const LandingPage = () => {
 
-  useEffect(() => {
-    UserService('noobdev47')
-  }, [])
-
   return (
     <>
       <Head>
