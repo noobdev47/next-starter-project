@@ -2,6 +2,8 @@ import '../styles/globals.scss'
 import { useEffect } from 'react'
 import { wrapper } from '../redux'
 import { connect } from 'react-redux'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 const MyApp = ({
   Component,
@@ -9,9 +11,10 @@ const MyApp = ({
   mode
 }) => {
   const getLayout = Component.getLayout || ((page) => page)
+  const client = new QueryClient()
 
   useEffect(() => {
-    if (mode === 'dark') {
+    if (localStorage.getItem('mode') === 'dark') {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
@@ -19,7 +22,12 @@ const MyApp = ({
   }, [mode])
 
   return getLayout(
-    <Component {...pageProps} />
+    <QueryClientProvider
+      client={client}
+    >
+      <Component {...pageProps} />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   )
 }
 
